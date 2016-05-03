@@ -6,6 +6,7 @@
 </head>
 <body ng-app="myApp">
     <div class="container">
+        <!-- El scope del padreCtrl puede ser usado desde un controlador hijo -->
         <div id="padre" ng-controller="padreCtrl">
             <button ng-click="logPadre()">Padre</button>
             <div id="hijo" ng-controller="hijoCtrl">
@@ -36,6 +37,9 @@
                     $scope.nieto = 'Soy el nieto';
                     $scope.edad = 4;
                     $scope.nietoLog = function(){
+                        //Cuando se trata de usar una propiedad del scope que no
+                        //esta definido en el controlador, se busca
+                        //al controlador padre de este
                         console.log($scope.nieto, $scope.edad, $scope.hijo);
                     };
                 })
