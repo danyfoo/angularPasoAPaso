@@ -6,43 +6,25 @@
 </head>
 <body ng-app="myApp">
     <div class="container">
-        <!-- El scope del padreCtrl puede ser usado desde un controlador hijo -->
-        <div id="padre" ng-controller="padreCtrl">
-            <button ng-click="logPadre()">Padre</button>
-            <div id="hijo" ng-controller="hijoCtrl">
-                <button ng-click="logHijo()">Hijo</button>
-                <div id="nieto" ng-controller="nietoCtrl">
-                    <button ng-click="nietoLog()">Nieto</button>
-                </div>
-            </div>
+        <div ng-controller="ctrl">
+            <!-- ng-bind nos permite enlazar informacion de la logica
+            del controlador a un componente en nuestra vista-->
+            <p ng-bind="mensaje"></p>
+            <!-- ng-model nos permite definir datos que se tomaran desde la vista
+             hacia nuestra logica del controlador-->
+            <input type="text" ng-model="mensaje">
+            <!-- En este ejemplo Angular estara al pendiente de los cambios realizados
+             desde la vista y cada interaccion con input se ejecutara $digest que actualizara
+             la informacion en el elemento p -->
         </div>
     </div>
     <script src="lib/angular/angular.js"></script>
     <script>
         angular.module('myApp',[])
-                .controller('padreCtrl', function($scope){
-                    $scope.padre = 'Soy el Papu';
-                    $scope.logPadre = function(){
-                        console.log($scope.padre)
-                    };
+                .controller('ctrl', function($scope){
+                    $scope.mensaje = 'Soy el Papu';
                 })
-                .controller('hijoCtrl', function($scope){
-                    $scope.hijo = 'Soy el primer hijo';
-                    $scope.edad = 36;
-                    $scope.logHijo = function(){
-                        console.log($scope.hijo, $scope.edad);
-                    };
-                })
-                .controller('nietoCtrl', function($scope){
-                    $scope.nieto = 'Soy el nieto';
-                    $scope.edad = 4;
-                    $scope.nietoLog = function(){
-                        //Cuando se trata de usar una propiedad del scope que no
-                        //esta definido en el controlador, se busca
-                        //al controlador padre de este
-                        console.log($scope.nieto, $scope.edad, $scope.hijo);
-                    };
-                })
+
     </script>
 </body>
 </html>
