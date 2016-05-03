@@ -1,0 +1,14 @@
+{
+  "name": "angularpasoapaso",
+  "version": "1.0.0",
+  "description": "Ejemplo de proyecto basado en el libro AngularJs Paso a Paso",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Rivera",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

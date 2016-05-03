@@ -1,0 +1,24 @@
+{
+  "name": "angularpasoapaso",
+  "description": "Ejemplo de proyecto basado en el libro AngularJs Paso a Paso",
+  "main": "public/index.html",
+  "authors": [
+    "Daniel Rivera"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "AngularJS"
+  ],
+  "homepage": "public/index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
