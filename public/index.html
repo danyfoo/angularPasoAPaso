@@ -5,15 +5,40 @@
     <title>Ejemplo de Controladores</title>
 </head>
 <body ng-app="myApp">
-    <div class="container" ng-controller="miCtrl">
-        <h1 ng-bind="mensaje"></h1>
+    <div class="container">
+        <div id="padre" ng-controller="padreCtrl">
+            <button ng-click="logPadre()">Padre</button>
+            <div id="hijo" ng-controller="hijoCtrl">
+                <button ng-click="logHijo()">Hijo</button>
+                <div id="nieto" ng-controller="nietoCtrl">
+                    <button ng-click="nietoLog()">Nieto</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="lib/angular/angular.js"></script>
     <script>
         angular.module('myApp',[])
-                .controller('miCtrl', function($scope){
-                    $scope.mensaje = 'Hola a Todos';
-                });
+                .controller('padreCtrl', function($scope){
+                    $scope.padre = 'Soy el Papu';
+                    $scope.logPadre = function(){
+                        console.log($scope.padre)
+                    };
+                })
+                .controller('hijoCtrl', function($scope){
+                    $scope.hijo = 'Soy el primer hijo';
+                    $scope.edad = 36;
+                    $scope.logHijo = function(){
+                        console.log($scope.hijo, $scope.edad);
+                    };
+                })
+                .controller('nietoCtrl', function($scope){
+                    $scope.nieto = 'Soy el nieto';
+                    $scope.edad = 4;
+                    $scope.nietoLog = function(){
+                        console.log($scope.nieto, $scope.edad, $scope.hijo);
+                    };
+                })
     </script>
 </body>
 </html>
