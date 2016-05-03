@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{respuesta}}</title>
+    <title>Ejemplo de Controladores</title>
 </head>
-<body>
-    <div class="container">
-        Entiendes el contenido de este libro?
-        <input type="checkbox" ng-model="respuesta">
-        <div ng-hide="respuesta">
-            <h2>Me esforzare mas!</h2>
-        </div>
-        <div ng-show="respuesta">
-            <h2>Felicidades</h2>
-        </div>
+<body ng-app="myApp">
+    <div class="container" ng-controller="miCtrl">
+        <h1>{{ mensaje }}</h1>
     </div>
     <script src="lib/angular/angular.js"></script>
+    <script>
+        angular.module('myApp',[])
+                .controller('miCtrl', function($scope){
+                    $scope.mensaje = 'Hola a Todos';
+                });
+    </script>
 </body>
 </html>
