@@ -11,6 +11,14 @@
     <script src="lib/angular/angular.js"></script>
     <script>
         angular.module('myApp',[])
+                .run(['$rootScope', function($rootScope){
+                    $rootScope.$on('$routeChangeStart', function (e, next, current){
+                        console.log('Se comenzara a cambiar la ruta hacia' + next.originalPath);
+                    })
+                }])
+                .config(['$httpProvider', function($httpProvider){
+                    //COnfiguraciones al servicio $http
+                }])
                 //Mediante el uso de $inject podemos separar el comportamiento del controlador
                 .controller('miCtrl', miCtrl);
 
