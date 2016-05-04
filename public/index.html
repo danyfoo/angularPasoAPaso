@@ -9,7 +9,9 @@
         <div ng-controller="Controlador">
             <form action="#">
                 Contrasena: <input type="password" ng-model="password">
-                <p ng-show="errorMinimo">Error: No cumple con el minimo de caracteres (6)</p>
+                <br><br>
+                Rectificar contrasena: <input type="password" ng-model="passwordRepeated">
+                <p ng-hide="coincidencia">Error: Las contrasenas no coinciden</p>
             </form>
         </div>
     </div>
@@ -17,16 +19,12 @@
     <script>
         angular.module('myApp',[])
                 .controller('Controlador', function($scope){
-                    $scope.errorMinimo = false;
-                    <!--
-                    watch es una funcion que esta monitoreando el comportamiento de algun
-                    modelo especificado en el scope,
-                    formato:
-                    $scope.$watch('model',function(newchange, oldchange){});
-                    -->
-                    $scope.$watch('password',function(nuevo, anterior){
-                        if (!nuevo) return;
-                        $scope.errorMinimo = nuevo.length < 6;
+                    $scope.coincidencia = false;
+
+                    $scope.$watchGroup(['password', 'passwordRepeated'],function(nuevos, anteriores){
+                        if (!nuevos) return;
+                        console.log(nuevos);
+                        $scope.coincidencia = nuevos[0] === nuevos[1];
                     });
                 })
     </script>
