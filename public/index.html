@@ -6,19 +6,29 @@
 </head>
 <body ng-app="myApp">
     <div class="container">
-        <div ng-controller="ctrl">
-            <!-- :: indica que no se actualizara nuestro componente-->
-            <p ng-bind="::mensaje"></p>
-            <input type="text" ng-model="mensaje">
+        <div ng-controller="Controlador">
+            <form action="#">
+                Contrasena: <input type="password" ng-model="password">
+                <p ng-show="errorMinimo">Error: No cumple con el minimo de caracteres (6)</p>
+            </form>
         </div>
     </div>
     <script src="lib/angular/angular.js"></script>
     <script>
         angular.module('myApp',[])
-                .controller('ctrl', function($scope){
-                    $scope.mensaje = 'Soy el Papu';
+                .controller('Controlador', function($scope){
+                    $scope.errorMinimo = false;
+                    <!--
+                    watch es una funcion que esta monitoreando el comportamiento de algun
+                    modelo especificado en el scope,
+                    formato:
+                    $scope.$watch('model',function(newchange, oldchange){});
+                    -->
+                    $scope.$watch('password',function(nuevo, anterior){
+                        if (!nuevo) return;
+                        $scope.errorMinimo = nuevo.length < 6;
+                    });
                 })
-
     </script>
 </body>
 </html>
