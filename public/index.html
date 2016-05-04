@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <title>Ejemplo de Controladores</title>
 </head>
-<!-- Mediante el atributo ng-app definimos el nombre del modulo con el cual
-podemos definir un comportamiento y mediante inyeccion de dependencias podemos
-comunicarnos con otros modulos-->
 <body ng-app="myApp">
     <div class="container" ng-controller="miCtrl">
         {{mensaje}}
@@ -14,11 +11,10 @@ comunicarnos con otros modulos-->
     <script src="lib/angular/angular.js"></script>
     <script>
         angular.module('myApp',[])
-                .controller('miCtrl', function ($scope) {
-                    $scope.mensaje = 'Angular Papu +10';
-                });
-        console.log(angular);
-        console.log(window.angular);
+                //Uso de inyeccion de dependencias para minificacion
+                .controller('miCtrl', ['$scope', function ($scope){
+                    $scope.mensaje = 'Papu +10 Pro, Lord Popo';
+                }]);
     </script>
 </body>
 </html>
