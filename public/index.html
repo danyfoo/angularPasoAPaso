@@ -7,15 +7,9 @@
 <body ng-app="myApp">
     <div class="container">
         <div ng-controller="ctrl">
-            <!-- ng-bind nos permite enlazar informacion de la logica
-            del controlador a un componente en nuestra vista-->
-            <p ng-bind="mensaje"></p>
-            <!-- ng-model nos permite definir datos que se tomaran desde la vista
-             hacia nuestra logica del controlador-->
+            <!-- :: indica que no se actualizara nuestro componente-->
+            <p ng-bind="::mensaje"></p>
             <input type="text" ng-model="mensaje">
-            <!-- En este ejemplo Angular estara al pendiente de los cambios realizados
-             desde la vista y cada interaccion con input se ejecutara $digest que actualizara
-             la informacion en el elemento p -->
         </div>
     </div>
     <script src="lib/angular/angular.js"></script>
