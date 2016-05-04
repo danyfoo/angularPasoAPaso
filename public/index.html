@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <title>Ejemplo de Controladores</title>
 </head>
+<!-- Mediante el atributo ng-app definimos el nombre del modulo con el cual
+podemos definir un comportamiento y mediante inyeccion de dependencias podemos
+comunicarnos con otros modulos-->
 <body ng-app="myApp">
-    <div class="container" ng-controller="miCtrl as mensaje">
-        {{mensaje.text}}
+    <div class="container" ng-controller="miCtrl">
+        {{mensaje}}
     </div>
     <script src="lib/angular/angular.js"></script>
     <script>
         angular.module('myApp',[])
-                .config(function($controllerProvider){
-                    $controllerProvider.allowGlobals();
-                })
-
-                function miCtrl(){
-                    //Para Acceder a los elementos del controlador de la manera que se esta haciendo
-                    //se debe acceder mediante la palabra reservada this
-                    this.text = 'Uno, dos, tres, cuatro, cinco';
-                };
+                .controller('miCtrl', function ($scope) {
+                    $scope.mensaje = 'Angular Papu +10';
+                });
+        console.log(angular);
+        console.log(window.angular);
     </script>
 </body>
 </html>
