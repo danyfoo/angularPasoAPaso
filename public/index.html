@@ -11,10 +11,17 @@
     <script src="lib/angular/angular.js"></script>
     <script>
         angular.module('myApp',[])
-                //Uso de inyeccion de dependencias para minificacion
-                .controller('miCtrl', ['$scope', function ($scope){
-                    $scope.mensaje = 'Papu +10 Pro, Lord Popo';
-                }]);
+                //Mediante el uso de $inject podemos separar el comportamiento del controlador
+                .controller('miCtrl', miCtrl);
+
+        //Injectamos las dependencias en el controlador
+        miCtrl.$inject = ['$scope', '$interval', '$http', '$log'];
+        //Con las depencias injectadas hacemos uso de construir el comportamiento del =
+        //COntrolador
+        function miCtrl ($scope, $interval, $http, $log){
+            //Contenido del controlador
+            $scope.mensaje = 'Jojo Bizarre Adventure';
+        }
     </script>
 </body>
 </html>
