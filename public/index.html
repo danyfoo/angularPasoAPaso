@@ -6,26 +6,21 @@
 </head>
 <body ng-app="myApp">
     <div class="container">
-        <div ng-controller="Controlador">
-            <form action="#">
-                Contrasena: <input type="password" ng-model="password">
-                <br><br>
-                Rectificar contrasena: <input type="password" ng-model="passwordRepeated">
-                <p ng-hide="coincidencia">Error: Las contrasenas no coinciden</p>
-            </form>
+        <!-- Dedido al uso del scope cuando tratamos con controladores anidados,
+        se puede llegar el caso de eliminar elementos por error por lo que opta por usar
+        controller as, de esta forma no estaremos utilizando el $scope para exponer
+        elementos de la vista-->
+        <div ng-controller="ctrl as lista">
+            {{lista.elementos}}
         </div>
     </div>
     <script src="lib/angular/angular.js"></script>
     <script>
         angular.module('myApp',[])
-                .controller('Controlador', function($scope){
-                    $scope.coincidencia = false;
-
-                    $scope.$watchGroup(['password', 'passwordRepeated'],function(nuevos, anteriores){
-                        if (!nuevos) return;
-                        console.log(nuevos);
-                        $scope.coincidencia = nuevos[0] === nuevos[1];
-                    });
+                .controller('ctrl', function(){
+                    //Para Acceder a los elementos del controlador de la manera que se esta haciendo
+                    //se debe acceder mediante la palabra reservada this
+                    this.elementos = 'Uno, dos, tres, cuatro, cinco';
                 })
     </script>
 </body>
