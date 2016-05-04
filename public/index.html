@@ -5,23 +5,21 @@
     <title>Ejemplo de Controladores</title>
 </head>
 <body ng-app="myApp">
-    <div class="container">
-        <!-- Dedido al uso del scope cuando tratamos con controladores anidados,
-        se puede llegar el caso de eliminar elementos por error por lo que opta por usar
-        controller as, de esta forma no estaremos utilizando el $scope para exponer
-        elementos de la vista-->
-        <div ng-controller="ctrl as lista">
-            {{lista.elementos}}
-        </div>
+    <div class="container" ng-controller="miCtrl as mensaje">
+        {{mensaje.text}}
     </div>
     <script src="lib/angular/angular.js"></script>
     <script>
         angular.module('myApp',[])
-                .controller('ctrl', function(){
+                .config(function($controllerProvider){
+                    $controllerProvider.allowGlobals();
+                })
+
+                function miCtrl(){
                     //Para Acceder a los elementos del controlador de la manera que se esta haciendo
                     //se debe acceder mediante la palabra reservada this
-                    this.elementos = 'Uno, dos, tres, cuatro, cinco';
-                })
+                    this.text = 'Uno, dos, tres, cuatro, cinco';
+                };
     </script>
 </body>
 </html>
