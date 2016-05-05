@@ -1,35 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>Ejemplo de Controladores</title>
 </head>
-<body ng-app="myApp">
-    <div class="container" ng-controller="miCtrl">
-        {{mensaje}}
+<body>
+    <div class="container" ng-controller="PlaylistCtrl">
+        <ul>
+            <li ng-repeat="titulo in playlist">{{titulo}}</li>
+        </ul>
+    </div>
+    <div ng-controller="PlaylistCtrl">
+        <ul>
+            <li ng-repeat="titulo in playlist">
+                {{titulo}}
+                <a class="button" href="#" ng-click="borrar($index)">&times;</a>
+            </li>
+        </ul>
     </div>
     <script src="lib/angular/angular.js"></script>
-    <script>
-        angular.module('myApp',[])
-                .run(['$rootScope', function($rootScope){
-                    $rootScope.$on('$routeChangeStart', function (e, next, current){
-                        console.log('Se comenzara a cambiar la ruta hacia' + next.originalPath);
-                    })
-                }])
-                .config(['$httpProvider', function($httpProvider){
-                    //COnfiguraciones al servicio $http
-                }])
-                //Mediante el uso de $inject podemos separar el comportamiento del controlador
-                .controller('miCtrl', miCtrl);
-
-        //Injectamos las dependencias en el controlador
-        miCtrl.$inject = ['$scope', '$interval', '$http', '$log'];
-        //Con las depencias injectadas hacemos uso de construir el comportamiento del =
-        //COntrolador
-        function miCtrl ($scope, $interval, $http, $log){
-            //Contenido del controlador
-            $scope.mensaje = 'Jojo Bizarre Adventure';
-        }
-    </script>
+    <script src="javascript/app.js"></script>
+    <script src="javascript/factories/PlaylistFactory.js"></script>
+    <script src="javascript/controllers/PlaylistCtrl.js"></script>
 </body>
 </html>
