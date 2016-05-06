@@ -7,12 +7,12 @@
         .module('myApp')
         .controller('PlaylistCtrl', PlaylistCtrl);
 
-    PlaylistCtrl.$inject = ['$scope', 'PlaylistService'];
+    PlaylistCtrl.$inject = ['$scope', 'PlaylistProvider'];
 
-    function PlaylistCtrl($scope, PlaylistService) {
-        $scope.playlist = PlaylistService.listar();
+    function PlaylistCtrl($scope, PlaylistProvider) {
+        $scope.playlist = PlaylistProvider.listar();
         $scope.delete = function (id) {
-            PlaylistService.borrar(id);
+            PlaylistProvider.borrar(id);
         };
     };
 })();
