@@ -5,22 +5,18 @@
     <title>Ejemplo de Controladores</title>
 </head>
 <body>
-    <div class="container" ng-controller="PlaylistCtrl">
-        <ul>
-            <li ng-repeat="titulo in playlist">{{titulo}}</li>
-        </ul>
+    <div class="container" ng-controller="PromiseCtrl">
+        <p>Estado del servidor: {{ status }}</p>
+        <p>Estado del servidor HTTP: {{ http }}</p>
+        <p>Estado del servidor de Base de Datos: {{ db }}</p>
+        <p>Estado las conexiones seguras: {{ ssl }}</p>
     </div>
-    <div class="container" ng-controller="PlaylistCtrl">
-        <ul>
-            <li ng-repeat="titulo in playlist">
-                {{titulo}}
-                <a class="button" href="#" ng-click="delete($index)">&times;</a>
-            </li>
-        </ul>
+    <div class="container" ng-controller="AppCtrl">
+
     </div>
     <script src="lib/angular/angular.js"></script>
     <script src="javascript/app.js"></script>
-    <script src="javascript/providers/PlaylistProvider.js"></script>
-    <script src="javascript/controllers/PlaylistCtrl.js"></script>
+    <script src="javascript/controllers/PromiseCtrl.js"></script>
+    <script src="javascript/controllers/AllPromisesCtrl.js"></script>
 </body>
 </html>
