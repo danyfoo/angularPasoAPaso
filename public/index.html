@@ -10,17 +10,17 @@
             <li ng-repeat="titulo in playlist">{{titulo}}</li>
         </ul>
     </div>
-    <div ng-controller="PlaylistCtrl">
+    <div class="container" ng-controller="PlaylistCtrl">
         <ul>
             <li ng-repeat="titulo in playlist">
                 {{titulo}}
-                <a class="button" href="#" ng-click="borrar($index)">&times;</a>
+                <a class="button" href="#" ng-click="delete($index)">&times;</a>
             </li>
         </ul>
     </div>
     <script src="lib/angular/angular.js"></script>
     <script src="javascript/app.js"></script>
-    <script src="javascript/factories/PlaylistFactory.js"></script>
+    <script src="javascript/services/PlaylistService.js"></script>
     <script src="javascript/controllers/PlaylistCtrl.js"></script>
 </body>
 </html>

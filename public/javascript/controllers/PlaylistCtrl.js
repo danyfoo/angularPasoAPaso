@@ -11,7 +11,7 @@
 
     function PlaylistCtrl($scope, PlaylistService) {
         $scope.playlist = PlaylistService.listar();
-        $scope.borrar = function (id) {
+        $scope.delete = function (id) {
             PlaylistService.borrar(id);
         };
     };
