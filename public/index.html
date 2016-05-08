@@ -11,17 +11,16 @@
         #contenido4{background-color: darkorange;}
     </style>
 </head>
-<body ng-controller="AnchorCtrl">
-    <a href="" ng-click="irA(1)">Contenido1</a>
-    <a href="" ng-click="irA(2)">Contenido2</a>
-    <a href="" ng-click="irA(3)">Contenido3</a>
-    <a href="" ng-click="irA(4)">Contenido4</a>
-    <div class="contenido" id="contenido1">Contenido 1</div>
-    <div class="contenido" id="contenido2">Contenido 2</div>
-    <div class="contenido" id="contenido3">Contenido 3</div>
-    <div class="contenido" id="contenido4">Contenido 4</div>
+<body>
+    <div ng-controller="PrimerCtrl as uno">
+        <input type="text" ng-model="uno.texto">
+        <button ng-click="uno.guardar()">Guardar en la Cache</button>
+    </div>
+    <div ng-controller="SegundoCtrl as dos">
+        <button ng-click="dos.imprimir()">Imprimir desde la Cache</button>
+    </div>
     <script src="lib/angular/angular.js"></script>
     <script src="javascript/app.js"></script>
-    <script src="javascript/controllers/AnchorExampleCtrl.js"></script>
+    <script src="javascript/controllers/CacheExampleCtrl.js"></script>
 </body>
 </html>
