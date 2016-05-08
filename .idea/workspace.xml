@@ -37,8 +37,8 @@
       <file leaf-file-name="AnchorExampleCtrl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascript/controllers/AnchorExampleCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+            <state relative-caret-position="18">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="13" selection-end-column="9" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -241,7 +241,7 @@
       <workItem from="1462681258326" duration="709000" />
       <workItem from="1462682094429" duration="199000" />
       <workItem from="1462682317360" duration="982000" />
-      <workItem from="1462739185823" duration="3224000" />
+      <workItem from="1462739185823" duration="3603000" />
     </task>
     <task id="LOCAL-00001" summary="Primer Controlador en angular">
       <created>1462301880152</created>
@@ -390,11 +390,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462741656060</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Uso de AnchorScroll para desplazarnos sobre la pagina mediante enlaces y hash para indicar el id en nuestra url">
+      <created>1462742429543</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1462742429543</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8470000" />
+    <option name="totallyTimeSpent" value="8849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="683" y="30" width="683" height="738" extended-state="4" />
@@ -450,7 +457,8 @@
     <MESSAGE value="Declaracion de constantes y values en angular" />
     <MESSAGE value="Uso de promesas en angular usando q" />
     <MESSAGE value="Uso de AnchorScroll para desplazarnos sobre la pagina mediante enlaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uso de AnchorScroll para desplazarnos sobre la pagina mediante enlaces" />
+    <MESSAGE value="Uso de AnchorScroll para desplazarnos sobre la pagina mediante enlaces y hash para indicar el id en nuestra url" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uso de AnchorScroll para desplazarnos sobre la pagina mediante enlaces y hash para indicar el id en nuestra url" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -793,14 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascript/controllers/CustomPromiseCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -819,10 +819,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascript/controllers/AnchorExampleCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        <state relative-caret-position="18">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="13" selection-end-column="9" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>

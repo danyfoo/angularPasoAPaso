@@ -6,6 +6,12 @@
 
     angular
         .module('myApp')
+        .run(function ($anchorScroll) {
+            //Mediante $anchorScroll.yOffset podemos indicarle un margen
+            //cuando nos posiciona a nuestra id, en este caso deja 50px
+            //en la parte superior de nuestra vista
+            $anchorScroll.yOffset = 50;
+        })
         .controller('AnchorCtrl', AnchorCtrl);
 
     AnchorCtrl.$inject = ['$scope', '$anchorScroll', '$location'];
