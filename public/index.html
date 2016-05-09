@@ -2,21 +2,24 @@
 <html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
-    <title>Ejemplo de Controladores</title>
+    <title>ng-class</title>
+    <style>
+        .flotar {
+            float: right;
+            padding:0 10px;
+        }
+        .fondoRojo{background-color: red;}
+        .bordesRedondeados{
+            border:2px solid black;
+            border-radius: 10px;}
+    </style>
 </head>
-<body>
-    <div ng-controller="UserCtrl">
-        <hr>
-        <div ng-repeat="usuario in usuarios">
-            <p><strong>Nombre: </strong>{{usuario.name}}</p>
-            <p><strong>Apellidos: </strong>{{usuario.username}}</p>
-            <p><strong>Email: </strong>{{usuario.email}}</p>
-            <p><strong>Website: </strong>{{usuario.website}}</p>
-            <hr>
-        </div>
+<body ng-app="myApp" ng-controller="miCtrl">
+    <div ng-class="generarClases()">
+        <h1>Ejemplo de los usos de ng-class</h1>
     </div>
     <script src="lib/angular/angular.js"></script>
     <script src="javascript/app.js"></script>
-    <script src="javascript/controllers/UserCtrl.js"></script>
+    <script src="javascript/controllers/miCtrl.js"></script>
 </body>
 </html>

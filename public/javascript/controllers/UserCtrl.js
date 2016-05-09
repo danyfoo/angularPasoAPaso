@@ -14,7 +14,7 @@
     function UserCtrl($scope, $http) {
         var vm = this;
         vm.title = 'UserCtrl';
-        
+
         $http.get('http://jsonplaceholder.typicode.com/users')
             .success(function (data, status) {
                 $scope.usuarios = data;
