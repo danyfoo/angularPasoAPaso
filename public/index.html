@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <title>ng-class</title>
 </head>
-<body ng-app="myApp" ng-controller="ListCtrl">
-    <div ng-style="classes">
-        Etiquetas: <input ng-model="etiquetas" ng-list><br>
-        Debug: {{ etiquetas }}
+<body ng-app="myApp" ng-controller="MusicCtrl">
+    <div class="container">
+        <h1>Biblioteca de CD's.</h1>
+        <input type="search" ng-model="buscar">
+        <ul>
+            <li ng-repeat="cd in cds | filter:buscar">{{cd}}</li>
+        </ul>
     </div>
     <script src="lib/angular/angular.js"></script>
     <script src="javascript/app.js"></script>
-    <script src="javascript/controllers/ListCtrl.js"></script>
-    <script src="javascript/factories/EtiquetasFactory.js"></script>
+    <script src="javascript/controllers/MusicCtrl.js"></script>
+    <script src="javascript/factories/MusicFactory.js"></script>
 </body>
 </html>
