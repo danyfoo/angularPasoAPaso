@@ -5,7 +5,17 @@
     "use strict";
     angular
         .module('myApp')
-        .controller('PlaylistCtrl', PlaylistCtrl);
+        .controller('PlaylistCtrl', PlaylistCtrl)
+        .config(compiler);
+
+    compiler.$inject = ['$compileProvider'];
+
+    /* @ngInject */
+    function compiler ($compileProvider) {
+        //Con esto eliminamos la informacion generado por ciertos funciones
+        //en el DOM, como comentarios
+        $compileProvider.debugInfoEnabled(true);
+    }
 
     PlaylistCtrl.$inject = ['$scope', 'PlaylistProvider'];
 
