@@ -286,7 +286,7 @@
       <workItem from="1462682094429" duration="199000" />
       <workItem from="1462682317360" duration="982000" />
       <workItem from="1462739185823" duration="16686000" />
-      <workItem from="1462769956024" duration="4002000" />
+      <workItem from="1462769956024" duration="4030000" />
     </task>
     <task id="LOCAL-00001" summary="Primer Controlador en angular">
       <created>1462301880152</created>
@@ -477,11 +477,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462769241509</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Manejo de Timeout en Angular mediante $timeout, la implementacion es parecida al manejo de promises $q">
+      <created>1462779022970</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1462779022970</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25934000" />
+    <option name="totallyTimeSpent" value="25962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="683" y="30" width="683" height="738" extended-state="4" />

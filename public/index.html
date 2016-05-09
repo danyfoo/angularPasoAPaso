@@ -5,11 +5,18 @@
     <title>Ejemplo de Controladores</title>
 </head>
 <body>
-    <div ng-controller="TimeOutCtrl as vm">
-        <button ng-click="vm.cancelar()">Cancelar</button>
+    <div ng-controller="UserCtrl">
+        <hr>
+        <div ng-repeat="usuario in usuarios">
+            <p><strong>Nombre: </strong>{{usuario.name}}</p>
+            <p><strong>Apellidos: </strong>{{usuario.username}}</p>
+            <p><strong>Email: </strong>{{usuario.email}}</p>
+            <p><strong>Website: </strong>{{usuario.website}}</p>
+            <hr>
+        </div>
     </div>
     <script src="lib/angular/angular.js"></script>
     <script src="javascript/app.js"></script>
-    <script src="javascript/controllers/TimeoutExampleCtrl.js"></script>
+    <script src="javascript/controllers/UserCtrl.js"></script>
 </body>
 </html>
