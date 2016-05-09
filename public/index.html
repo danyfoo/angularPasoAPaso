@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <title>Ejemplo de Controladores</title>
 </head>
-<body ng-controller="CustomPromiseCtrl">
-    <button ng-click="accion(false)">Resolver</button>
-    <button ng-click="accion(true)">Rechazar</button>
-    <div>{{ resuelta }}</div>
-    <div>{{ rechazada }}</div>
+<body>
+    <div ng-controller="UserCtrl">
+        <hr>
+        <div ng-repeat="usuario in usuarios">
+            <p><strong>Nombre: </strong>{{usuario.name}}</p>
+            <p><strong>Apellidos: </strong>{{usuario.username}}</p>
+            <p><strong>Email: </strong>{{usuario.email}}</p>
+            <p><strong>Website: </strong>{{usuario.website}}</p>
+            <hr>
+        </div>
+    </div>
     <script src="lib/angular/angular.js"></script>
     <script src="javascript/app.js"></script>
-    <script src="javascript/controllers/PromiseCtrl.js"></script>
-    <script src="javascript/controllers/CustomPromiseCtrl.js"></script>
+    <script src="javascript/controllers/UserCtrl.js"></script>
 </body>
 </html>
