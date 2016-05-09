@@ -10,7 +10,7 @@
         .controller('SegundoCtrl', SegundoCtrl);
 
     PrimerCtrl.$inject = ['$cacheFactory'];
-    SegundoCtrl.$inject = ['$cacheFactory'];
+    SegundoCtrl.$inject = ['$cacheFactory', '$log'];
 
     /* @ngInject */
     function PrimerCtrl($cacheFactory) {
@@ -24,12 +24,13 @@
     }
 
     /* @ngInject */
-    function SegundoCtrl($cacheFactory) {
+    function SegundoCtrl($cacheFactory, $log) {
         var vm = this;
         var cachePrincipal = $cacheFactory.get('cachePrincipal');
 
         vm.imprimir = function () {
             console.log(cachePrincipal.get('mensaje'));
+            $log.warn('Mensaje','Mensaje');
         }
     }
 
