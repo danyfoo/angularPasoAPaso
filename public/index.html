@@ -3,24 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejemplo de Controladores</title>
-    <style>
-        .contenido{height: 800px;}
-        #contenido1{background-color: aqua;}
-        #contenido2{background-color: crimson;}
-        #contenido3{background-color: forestgreen;}
-        #contenido4{background-color: darkorange;}
-    </style>
 </head>
 <body>
-    <div ng-controller="PrimerCtrl as uno">
-        <input type="text" ng-model="uno.texto">
-        <button ng-click="uno.guardar()">Guardar en la Cache</button>
-    </div>
-    <div ng-controller="SegundoCtrl as dos">
-        <button ng-click="dos.imprimir()">Imprimir desde la Cache</button>
+    <div ng-controller="TimeOutCtrl as vm">
+        <button ng-click="vm.cancelar()">Cancelar</button>
     </div>
     <script src="lib/angular/angular.js"></script>
     <script src="javascript/app.js"></script>
-    <script src="javascript/controllers/CacheExampleCtrl.js"></script>
+    <script src="javascript/controllers/TimeoutExampleCtrl.js"></script>
 </body>
 </html>
