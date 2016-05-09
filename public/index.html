@@ -3,19 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>ng-class</title>
-    <style>
-        .flotar {
-            float: right;
-            padding:0 10px;
-        }
-        .fondoRojo{background-color: red;}
-        .bordesRedondeados{
-            border:2px solid black;
-            border-radius: 10px;}
-    </style>
 </head>
 <body ng-app="myApp" ng-controller="miCtrl">
-    <div ng-class="generarClases()">
+    <div ng-style="classes">
         <h1>Ejemplo de los usos de ng-class</h1>
     </div>
     <script src="lib/angular/angular.js"></script>

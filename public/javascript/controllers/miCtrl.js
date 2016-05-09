@@ -15,10 +15,14 @@
         var vm = this;
         vm.title = 'miCtrl';
 
-        var clases = ['flotar', 'fondoRojo', 'bordesRedondeados'];
-        $scope.generarClases = function () {
-            return clases.join(' ');
-        }
+        var clases = {
+            'float': 'right',
+            'padding': '0 10px',
+            'background-color': 'red',
+            'border': '2px solid black',
+            'border-radius': '10px'
+        };
+        $scope.clases = clases;
     }
 
 })();
